@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Daily Digest</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FAFAFA;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      background-color: #FFFFFF;
+      padding: 20px;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #0078e7;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    {% for story, summary, comment in stories_comments %}
+    <h2><a href="{{ story.url }}">{{ story.title }}</a></h2>
+    <p>By {{ story.author }}</p>
+    <p>{{ summary }}</p>
+    {% if comment %}
+    <h3>Relevant comment by {{ comment.by }}</h3>
+    <p>{{ comment.text }}</p>
+    {% endif %}
+    {% endfor %}
+  </div>
+</body>
+
+</html>
