@@ -1,14 +1,13 @@
 import os
 import requests
 import openai
-from tiktoken import Tokenizer
+import tiktoken
 from jinja2 import Environment, FileSystemLoader
 import yaml
 from tqdm import tqdm
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 from newspaper import Article
-
 
 class ProgressBarSingleton:
     _instance = None
@@ -25,7 +24,7 @@ class RelevanceScorer:
     def __init__(self, api_key):
         self.api_key = api_key
         openai.api_key = self.api_key
-        self.tokenizer = Tokenizer()
+        self.tokenizer = tiktoken.encoding_for_model("gpt-3.5-turbo")
         self.MAX_TOKENS = 2048
 
     def truncate_text(self, text):
@@ -195,4 +194,4 @@ if __name__ == '__main__':
     scorer = RelevanceScorer(api_key)
     comment_finder = CommentFinder(scorer)
     newspaper_generator = NewspaperGenerator(scorer, comment_finder)
-    newspaper_generator.generate_newspaper()
+    newspaper_generator.generate_newspaper(UserPreferences.get_user_preferences)
