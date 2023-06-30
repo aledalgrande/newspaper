@@ -35,7 +35,7 @@ To use HackerNewspaper, first, update your preferences in the `preferences.yaml`
 Then, run the main script:
 
 ```bash
-OPENAI_API_KEY=your_key python main.py
+OPENAI_API_KEY=your_key poetry run python main.py
 ```
 
 This will fetch the top 10 stories from Hacker News, score them based on your preferences, and generate a newspaper with the most relevant stories and comments.
