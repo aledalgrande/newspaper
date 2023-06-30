@@ -3,7 +3,6 @@
 HackerNewspaper is a Python package that curates and summarizes top stories from Hacker News. It's designed for tech enthusiasts, developers, and anyone who wants to stay updated with the latest technology and science news while avoiding certain topics.
 
 * mostly GPT generated
-Sure, here's an example of a `README.md` file for a project named "HackerNewspaper":
 
 ## Installation
 
