@@ -47,4 +47,4 @@ Contributions are always welcome! Please read the [contribution guidelines](CONT
 
 ## License
 
-This project is licensed under the terms of the [MIT license](LICENSE.md).
+This project is licensed under the terms of the [MIT license](LICENSE).
